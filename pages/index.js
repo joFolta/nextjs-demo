@@ -10,12 +10,9 @@ export default function Home() {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <h1>
-          Read <Link href="/posts/first-post">this page!</Link>
-        </h1>
+        <p>Hi, I'm Johann - software engineer 👨🏻‍💻 from Boston specializing in React, Node, and Python. When I'm not coding, I enjoy hiking in the White Mountains of New Hampshire, riding my 400cc naked motorcycle, and mountain biking in the trails. I live with my fellow-engineer wife, curious-about-life toddler, and rambunctious black cat 🐈‍.</p>
         <p>
-          (This is a sample website - you’ll be building a site like this on{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
+          &gt; Read <Link href="/posts/first-post">this page!</Link>
         </p>
       </section>
     </Layout>
