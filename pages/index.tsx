@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { GetStaticProps } from 'next';
 import Date from '../components/date';
 import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
@@ -9,7 +10,7 @@ import { getSortedPostsData } from '../lib/posts';
 // It won’t even be included in the JS bundle for the browser, 
 // so you can write direct database queries without them being sent to browsers.
 // https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-props#write-server-side-code-directly
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const allPostsData = getSortedPostsData();
 
   return {
@@ -19,7 +20,13 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({ allPostsData }) {
+export default function Home({ allPostsData }: {
+  allPostsData: {
+    date: string;
+    title: string;
+    id: string
+  }[]
+}) {
   return (
     <Layout home>
       <Head>
